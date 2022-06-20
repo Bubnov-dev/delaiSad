@@ -20,10 +20,12 @@ $dark-text: #4F4F4F;
 
 $yellow: #F4E9BF;
 $red: #DA5C3E;
+$red-op: #DA5C3ED9;
+
 $green: #219653;
 
 $red-dark: #B44D35;
-$light: #FFF9E2;
+$light: #f7f7f7;
 $light-grey: #E5E5E5;
 $light-back: #F2F2F2
 $grey: #828282;
@@ -61,6 +63,10 @@ a
                 margin-top: 0.8rem
                 height: 1px
                 content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2240%22%20height%3D%221%22%20viewBox%3D%220%200%2040%201%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cline%20y1%3D%220.5%22%20x2%3D%2240%22%20y2%3D%220.5%22%20stroke%3D%22%23828282%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+
+.link-not-like
+    color: inherit
+    text-decoration: none
 
 .link-like
     cursor: pointer
@@ -226,12 +232,12 @@ h1, h2, h3, h4, h5, h6, .fn, .h1, .h2, .h3, .h4, .h5, .h6
     
 
 h1, .h1
-
-    font-size: 64px;
-    font-style: normal;
+    font-size: 75px;
     font-weight: 300;
     line-height: 75px;
     letter-spacing: 0em;
+    text-align: left;
+
     text-align: left;
     margin-bottom: 2rem
     @media screen and ( max-width: $m-md )
@@ -302,13 +308,12 @@ h3, .h3
     top: 0
     left: 11px
     .back-line
-
         height: 100%
         width: 1px
         background: $light-back
 
 .btn
-    border-radius: 10px;        
+    border-radius: 5px;        
 .btn:focus
     outline: 0;
     box-shadow: none
@@ -797,8 +802,12 @@ picture
 
 .logo
     &-text
-        font-size: 14px;
-        line-height: 17px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+
 
     & picture
         display: grid
@@ -837,6 +846,7 @@ footer
         & picture
             width: 122px
 .header-navbar
+    padding-top: 19px
     
     &__list
         display: flex
@@ -847,7 +857,6 @@ footer
         
     &__item
         flex-shrink: 0
-    padding-top: 43px
     .logo
         @media screen and ( max-width: $xxl )
             max-width: 150px
@@ -864,6 +873,12 @@ footer
         gap: .5rem
         align-items: center
         color: white
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+
 
         &:hover
             color: $yellow
@@ -1013,12 +1028,42 @@ header.white
 
 .banner
     color: white
-    padding-top: 91px
+    padding-top: 127px
     padding-bottom: 106px
+    display: grid
+    grid-template-columns: 2fr 250px
+    gap: 20px
+
+    @media screen and ( max-width: $lg )
+        display: block
+        
+    &__left
+        grid-column: 1/2    
+
+    &__right
+        grid-column: 2/3
+        display: flex
+        align-items: end
+        .video-play
+            margin-bottom: 60px
+            max-width: 40vw
+
+
+    .pre-h1-text
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $yellow
+        margin-bottom: 7px
 
 
     .h1
-        max-width: 900px
+        max-width: 790px
+        @media screen and ( max-width: $lg )
+            max-width: 100%
+            
 
     &__subtitle
         font-family: 'Futura New'
@@ -1046,29 +1091,24 @@ header.white
 
 
     &-list
-        display: grid
+        display: flex
         grid-template-columns: 100% 
-        gap: 39px
+        gap: 20px 5px
 
         margin-top: 3.4rem
-        margin-bottom: 70px
+        margin-bottom: 54px
 
-        max-width: 525px;
+        @media screen and ( max-width: $md )
+            flex-wrap: wrap
+
         &__item
             display: grid
-            grid-template-columns: 1fr 10fr
-            gap: 46px
-            margin-left: -37px
-            &::before
-                content: ''
-                border-top: 1px solid #BCBCBC;
-                width: 69px
-                position: relative
-                display: grid;
-                margin-top: 0.7rem;    
-
+            grid-template-columns: 36px 1fr
+            gap: 18px
             @media screen and ( max-width: $md )
-                display: block
+                // display: flex
+                // flex-direction: column
+                // gap: 10px
                 margin-left: 0
                 &::before
                     display: none
@@ -1086,6 +1126,7 @@ header.white
                 line-height: 22px;
                 letter-spacing: 0em;
                 text-align: left;
+                width: 294px
 
 .banner-wrapper--foundation
     background-image: url(../img/header.png)
@@ -1093,9 +1134,12 @@ header.white
 .banner-wrapper--snd
     background-repeat: none;
     background-size: cover;
-    margin-bottom: 103px !important
+    // margin-bottom: 103px !important
     .banner
-        padding-bottom: 126px
+        padding-bottom: 214px
+        @media screen and ( max-width: $lg )
+            padding-bottom: 130px
+            
     
 .place-items-center
     place-items: center
@@ -1159,7 +1203,6 @@ header.white
 .banner-wrapper
     background-repeat: none
     background-size: cover
-    margin-bottom: 80px
 
     .def-combo
         gap: 3rem 4rem
