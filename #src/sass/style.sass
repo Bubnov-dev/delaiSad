@@ -21,7 +21,10 @@
     background: $light
 
 section
-    padding: 100px 0
+    padding: 80px 0 90px
+
+    &.no-p
+        padding: 0
 
 .services
     .slick-slide
@@ -80,7 +83,6 @@ section
             font-size: 25px;
             font-weight: 300;
             line-height: 29px;
-            letter-spacing: 0em;
             text-align: center;
             z-index: 100
 
@@ -109,3 +111,238 @@ section
             
             .services__item-hover
                 opacity: 1
+
+
+.gallery
+    &__show-switch
+        margin-top: 48px
+
+        cursor: pointer
+
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: $red
+
+        *
+            margin: auto
+            width: fit-content
+            border-bottom: 1px dashed $red
+
+    &__grid
+        margin-top: 41px
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        gap: 20px
+        a
+            picture, img
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+        a:nth-last-child(9n+0)
+            grid-column: 1/3
+            grid-row: 1/2
+            
+        a:nth-last-child(9n+1)
+            grid-column: 1/2
+            grid-row: 2/3
+            
+        a:nth-last-child(9n+2)
+            grid-column: 2/3
+            grid-row: 2/3
+
+        a:nth-last-child(9n+3)
+            grid-column: 3/4
+            grid-row: 1/3
+
+        a:nth-last-child(9n+4)
+            grid-column: 4/5
+            grid-row: 1/2
+
+        a:nth-last-child(9n+5)
+            grid-column: 4/5
+            grid-row: 2/3
+
+        a:nth-last-child(9n+6)
+            grid-column: 1/2
+            grid-row: 3/4
+
+        a:nth-last-child(9n+7)
+            grid-column: 2/4
+            grid-row: 3/4
+
+        a:nth-last-child(9n+8)
+            grid-column: 4/5
+            grid-row: 3/4
+
+
+        @media screen and ( max-width: $md )
+            grid-template-columns: 1fr 1fr
+            a:nth-last-child(9n+0)
+                grid-column: 1/3
+                grid-row: 1/2
+                
+            a:nth-last-child(9n+1)
+                grid-column: 1/2
+                grid-row: 2/3
+                
+            a:nth-last-child(9n+2)
+                grid-column: 2/3
+                grid-row: 2/3
+
+            a:nth-last-child(9n+3)
+                grid-column: 1/2
+                grid-row: 3/5
+
+            a:nth-last-child(9n+4)
+                grid-column: 2/3
+                grid-row: 3/4
+
+            a:nth-last-child(9n+5)
+                grid-column: 2/3
+                grid-row: 4/5
+
+            a:nth-last-child(9n+6)
+                grid-column: 1/2
+                grid-row: 6/7
+
+            a:nth-last-child(9n+7)
+                grid-column: 1/3
+                grid-row: 5/6
+
+            a:nth-last-child(9n+8)
+                grid-column: 2/3
+                grid-row: 6/7
+            
+
+.project-type
+    display: grid
+    gap: 70px
+    margin: 100px 0 160px
+    align-items: center
+
+    @media screen and ( max-width: $lg )
+        display: flex
+        flex-direction: column
+        
+
+.double-photos
+    display: grid
+
+.project-zone
+    grid-template-columns: 1fr 1.1fr
+    @media screen and ( max-width: $lg )
+        flex-direction: column-reverse
+
+    .double-photos
+        width: 122%
+        margin-right: -22%
+        picture:first-child
+            grid-column: 1/3 
+            grid-row: 1/4
+            z-index: 10
+            position: relative
+            img
+                box-shadow: 40px 40px 40px rgba(0,0,0,0.1)
+
+        picture:nth-child(2)
+            grid-column: 2/5
+            grid-row: 2/5
+            place-self: end
+
+.project-sketch
+    grid-template-columns: 1.4fr 1fr
+    
+
+    .double-photos
+        width: 122%
+        margin-left: -22%
+        picture:first-child
+            grid-column: 1/4 
+            grid-row: 1/4
+
+        picture:nth-child(2)
+            grid-column: 3/5
+            grid-row: 2/5
+            place-self: end
+            img
+                box-shadow: -40px -40px 40px rgba(0,0,0,0.1)
+
+.project-service
+    grid-template-columns: 1fr 1.3fr
+
+    .double-photos
+        width: 122%
+        margin-left: -22%
+        picture:first-child
+            grid-column: 1/4 
+            grid-row: 1/4
+
+        picture:nth-child(2)
+            grid-column: 3/5
+            grid-row: 3/5
+            place-self: end
+            img
+                box-shadow: -40px -40px 40px rgba(0,0,0,0.1)
+
+    ul
+        max-height: 422px
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        gap: 10px 50px
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 32px;
+        text-align: left;
+        place-content: space-between
+        li
+            max-width: 320px
+
+.project-step
+    &__description
+        margin: 34px 0
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 32px;
+        text-align: left;
+
+    &__numbers
+        display: flex
+        ga: 15px
+        margin-bottom: 60px
+        @media screen and ( max-width: $md )
+            display: flex
+            flex-direction: column
+            gap: 40px
+            
+
+    &__number
+        display: grid
+        grid-template-columns: 34px 1fr
+        gap: 9px
+        &-icon
+            grid-column: 1/2
+            grid-row: 1/3
+
+        &-title
+            grid-column: 2/3
+            grid-row: 1/2
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 32px;
+            text-align: left;
+
+
+        &-value
+            grid-column: 2/3
+            grid-row: 2/3
+            font-weight: 400;
+            font-size: 29px;
+            line-height: 32px;
+            color: black
+                
+    .btn-primary
+        width: fit-content

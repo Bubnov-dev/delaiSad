@@ -36,4 +36,16 @@ $(document).ready(function () {
             },
         ]
     });
+
+    $('.gallery__show-switch .more').on('click', function () {
+        $('.gallery__show-switch .less').removeClass('hidden')
+        $(this).addClass('hidden')
+        $('.gallery__grid.not-first').removeClass('hidden')
+    });
+
+    $('.gallery__show-switch .less').on('click', function () {
+        $('.gallery__show-switch .more').removeClass('hidden')
+        $(this).addClass('hidden')
+        $('.gallery__grid.not-first').addClass('hidden')
+    });
 });
