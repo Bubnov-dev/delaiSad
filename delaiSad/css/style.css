@@ -1831,9 +1831,7 @@ section {
 }
 
 .services__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 105%;
   margin-top: 50px;
 }
 
@@ -1873,10 +1871,11 @@ section {
 .services__item {
   position: relative;
   width: 327px;
+  max-width: 100%;
   cursor: pointer;
 }
 
-.services__item-wrapepr {
+.services__item-wrapper {
   padding-right: 20px;
 }
 
@@ -2276,6 +2275,16 @@ section {
   }
 }
 
+@media screen and (max-width: 1800px) {
+  .services__list .slick-prev {
+    left: -2vw;
+  }
+
+  .services__list .slick-next {
+    right: -2vw;
+  }
+}
+
 @media screen and (max-width: 1400px) {
   .header-navbar .logo {
     max-width: 150px;
@@ -2501,6 +2510,14 @@ section {
 }
 
  @media screen and (min-width: 1400px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 1800px){
 
 @supports (-webkit-appearance:none){
 

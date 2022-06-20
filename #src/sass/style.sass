@@ -31,7 +31,7 @@ section
         filter: unset
 
     &__list
-        display: flex
+        width: 105% 
         margin-top: 50px
 
 
@@ -55,13 +55,18 @@ section
             display: none !important
         .slick-prev
             left: -200px
+            @media screen and ( max-width: 1800px )
+                left: -2vw
         .slick-next
             right: -200px
+            @media screen and ( max-width: 1800px )
+                right: -2vw
     &__item
         position: relative
         width: 327px
+        max-width: 100%
         cursor: pointer
-        &-wrapepr
+        &-wrapper
             padding-right: 20px
         img
             width: 100%
