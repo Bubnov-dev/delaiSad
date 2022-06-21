@@ -18,6 +18,9 @@ $modal-fade-transform: scale(.8) !important
 $dark: #333333;
 $dark-text: #4F4F4F;
 
+$dark-back: #313131
+$dark-border: #2a2a2a
+
 $yellow: #F4E9BF;
 $red: #DA5C3E;
 $red-op: #DA5C3ED9;
@@ -51,6 +54,11 @@ html, body
 
 // body
     // letter-spacing: -0.03em
+
+@mixin vertical
+    display: flex
+    flex-direction: column
+    
 
 .fw-bolder
     font-family: 'Futura New';
@@ -176,7 +184,11 @@ p
         
 
 
-.phone a
+.phone 
+    display: flex
+    align-items: center
+    gap: 15px
+    a
     text-decoration: none
 
 *
@@ -263,7 +275,6 @@ h2, .h2
     font-weight: 300;
     font-style: normal;
     
-    text-align: left;
     line-height: 100%;
     margin-bottom: 2rem
     margin-top: 2rem
@@ -278,8 +289,6 @@ h2, .h2
         
         line-height: 56px;
         
-        text-align: left;
-
 
 h3, .h3
     font-size: 1.7rem
@@ -301,7 +310,7 @@ h3, .h3
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: 29px;
+    line-height: 30px;
     letter-spacing: -0.05em
     text-align: left;
 
