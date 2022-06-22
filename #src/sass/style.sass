@@ -114,6 +114,11 @@ section
 
 
 .gallery
+    position: relative
+    &::after
+        position: absolute
+        z-index: -1
+        content: url('../img/lines1.png')
     &__show-switch
         margin-top: 48px
 
@@ -251,7 +256,13 @@ section
     display: grid
 
 .project-zone
+    
     grid-template-columns: 1fr 1.1fr
+    position: relative
+    &::after
+        position: absolute
+        content: url('../img/lines2.png')
+        z-index: -1
     @media screen and ( max-width: $lg )
         flex-direction: column-reverse
 
@@ -374,7 +385,7 @@ section
         display: grid
         grid-template-columns: 1fr 463px
         gap: 95px
-        @media screen and ( max-width: $lg )
+        @media screen and ( max-width: $xl )
             @include vertical
 
 
@@ -401,7 +412,7 @@ section
         border: 5px solid $dark-border
         @include vertical
         gap: 53px
-        @media screen and ( max-width: $lg )
+        @media screen and ( max-width: $xl )
             flex-direction: row
             gap: 30px 10%
             flex-wrap: wrap
@@ -417,11 +428,14 @@ section
             margin-top: -70px
             margin-left: -40px
             width: calc(100% + 80px)
-            @media screen and ( max-width: $lg )
+            @media screen and ( max-width: $xl )
                 margin-top: -10px
                 margin-left: -10px
                 width: 40%
                 transform: scale(1.5)
+
+            @media screen and ( max-width: $xl )
+                display: none
 
             img
                 width: 100%
@@ -433,9 +447,10 @@ section
             letter-spacing: 0em;
             text-align: center;
             color: white
-            padding: 0 15px
-            @media screen and ( max-width: $lg )
-                width: 50%
+            padding: 0 15px 0
+            @media screen and ( max-width: $xl )
+                padding-top: 15px 
+
 
     &__contact
         padding: 0 25px
@@ -464,14 +479,20 @@ section
 
 .about
     background: $light
-    // background-image: url('../img/dd.png')
-    background-position-x: 200px
+    background-image: url('../img/dd.svg')
+    background-repeat: no-repeat
+    background-position-y: 50px
+    background-position-x: 48%
     padding: 116px 0 115px !important
     margin-top: 40px
     &__grid
         display: grid
         grid-template-columns: 1fr 463px
         gap: 93px
+        @media screen and ( max-width: $xxl )
+            grid-template-columns: 1fr 333px
+        @media screen and ( max-width: $lg )
+            display: block
 
     p
         font-size: 24px;
@@ -487,6 +508,9 @@ section
             position: absolute
             margin-top: -181px
             margin-bottom: -126px
+
+        @media screen and ( max-width: $lg )
+            display: none
 
 .ivanova
     padding-bottom: 127px
@@ -507,9 +531,23 @@ section
         letter-spacing: 0em;
         text-align: left;
 
+    .quote
+        position: relative
+        &::after
+	        content: url("data:image/svg+xml,%3Csvg width='141' height='122' viewBox='0 0 141 122' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 61.2H21.6L18 58.2C18 63.8 16.6 71.2 13.8 80.4C11.4 90 7 99.4 0.600001 108.6L17.4 121.8C27.8 111.4 35.8 100 41.4 87.6C47 75.6 49.8 63.6 49.8 51.6V0H0V61.2Z' fill='%23F8F8F8'/%3E%3Cpath d='M91.125 61.2H112.725L109.125 58.2C109.125 63.8 107.725 71.2 104.925 80.4C102.525 90 98.125 99.4 91.725 108.6L108.525 121.8C118.925 111.4 126.925 100 132.525 87.6C138.125 75.6 140.925 63.6 140.925 51.6V0H91.125V61.2Z' fill='%23F8F8F8'/%3E%3C/svg%3E")
+        &::after
+            position: absolute
+            bottom: -30px
+            right: 60px
+            z-index: -1
+
 .work-scheme
     background: $light
     text-align: center
+    background-image: url('../img/dd.svg')
+    background-repeat: no-repeat
+    background-position-y: 400px
+    background-position-x: 50%
     h2
         margin-bottom: 68px
     &__list
@@ -529,11 +567,12 @@ section
 .offer
     display: grid
     grid-template-columns: 1fr 1fr
-    @media screen and ( max-width: $lg )
+    @media screen and ( max-width: $xl )
         display: block
     &__left
         background: $yellow
         position: relative
+
         @media screen and ( max-width: $lg )
             display: none
         img
@@ -541,6 +580,10 @@ section
             right: 120px
             top: -20%
             height: 150%
+            object-fit: contain
+            
+            @media screen and ( max-width: $xxl )
+                right: 20px
 
 
     &__right
@@ -572,6 +615,7 @@ section
                 gap: 15px
                 align-items: center
                 text-decoration: none
+                white-space: nowrap
 
 
 .contacts

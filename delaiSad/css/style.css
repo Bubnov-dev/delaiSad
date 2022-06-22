@@ -1907,6 +1907,16 @@ section.no-p {
   opacity: 1;
 }
 
+.gallery {
+  position: relative;
+}
+
+.gallery::after {
+  position: absolute;
+  z-index: -1;
+  content: url("../img/lines1.png");
+}
+
 .gallery__show-switch {
   margin-top: 48px;
   cursor: pointer;
@@ -2025,6 +2035,13 @@ section.no-p {
 
 .project-zone {
   grid-template-columns: 1fr 1.1fr;
+  position: relative;
+}
+
+.project-zone::after {
+  position: absolute;
+  content: url("../img/lines2.png");
+  z-index: -1;
 }
 
 .project-zone .double-photos {
@@ -2254,7 +2271,7 @@ section.no-p {
   letter-spacing: 0em;
   text-align: center;
   color: white;
-  padding: 0 15px;
+  padding: 0 15px 0;
 }
 
 .benefits__contact {
@@ -2287,7 +2304,10 @@ section.no-p {
 
 .about {
   background: #f7f7f7;
-  background-position-x: 200px;
+  background-image: url("../img/dd.svg");
+  background-repeat: no-repeat;
+  background-position-y: 50px;
+  background-position-x: 48%;
   padding: 116px 0 115px !important;
   margin-top: 40px;
 }
@@ -2334,9 +2354,28 @@ section.no-p {
   text-align: left;
 }
 
+.ivanova .quote {
+  position: relative;
+}
+
+.ivanova .quote::after {
+  content: url("data:image/svg+xml,%3Csvg width='141' height='122' viewBox='0 0 141 122' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 61.2H21.6L18 58.2C18 63.8 16.6 71.2 13.8 80.4C11.4 90 7 99.4 0.600001 108.6L17.4 121.8C27.8 111.4 35.8 100 41.4 87.6C47 75.6 49.8 63.6 49.8 51.6V0H0V61.2Z' fill='%23F8F8F8'/%3E%3Cpath d='M91.125 61.2H112.725L109.125 58.2C109.125 63.8 107.725 71.2 104.925 80.4C102.525 90 98.125 99.4 91.725 108.6L108.525 121.8C118.925 111.4 126.925 100 132.525 87.6C138.125 75.6 140.925 63.6 140.925 51.6V0H91.125V61.2Z' fill='%23F8F8F8'/%3E%3C/svg%3E");
+}
+
+.ivanova .quote::after {
+  position: absolute;
+  bottom: -30px;
+  right: 60px;
+  z-index: -1;
+}
+
 .work-scheme {
   background: #f7f7f7;
   text-align: center;
+  background-image: url("../img/dd.svg");
+  background-repeat: no-repeat;
+  background-position-y: 400px;
+  background-position-x: 50%;
 }
 
 .work-scheme h2 {
@@ -2387,6 +2426,8 @@ section.no-p {
   right: 120px;
   top: -20%;
   height: 150%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .offer__right {
@@ -2430,6 +2471,7 @@ section.no-p {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .contacts {
@@ -2897,6 +2939,57 @@ footer .footer-list {
   .header-navbar .logo {
     max-width: 150px;
   }
+
+  .about__grid {
+    grid-template-columns: 1fr 333px;
+  }
+
+  .offer__left img {
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .benefits__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .benefits__info {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 30px 10%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .benefits__info-img {
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 40%;
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+
+  .benefits__info-img {
+    display: none;
+  }
+
+  .benefits__info-text {
+    padding-top: 15px;
+  }
+
+  .offer {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 1199px) {
@@ -2948,45 +3041,20 @@ footer .footer-list {
             flex-direction: column-reverse;
   }
 
-  .benefits__grid {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .benefits__info {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    gap: 30px 10%;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-
-  .benefits__info-img {
-    margin-top: -10px;
-    margin-left: -10px;
-    width: 40%;
-    -webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-
-  .benefits__info-text {
-    width: 50%;
-  }
-
   .benefits__contact {
     margin: auto;
   }
 
   .benefits__contact .btn-primary {
     font-size: 23px;
+  }
+
+  .about__grid {
+    display: block;
+  }
+
+  .about__img {
+    display: none;
   }
 
   .ivanova__grid {
@@ -2997,10 +3065,6 @@ footer .footer-list {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-
-  .offer {
-    display: block;
   }
 
   .offer__left {
@@ -3211,6 +3275,8 @@ footer .footer-list {
 @supports (-webkit-appearance:none){
 .banner-wrapper--foundation{background-image:url(../img/header.webp)}
 .banner-wrapper--about{background-image:url(../img/about-banner.webp)}
+.about{background-image:url("../img/dd.svg")}
+.work-scheme{background-image:url("../img/dd.svg")}
 }
 
  @media screen and (min-width: 576px){
@@ -3286,6 +3352,14 @@ footer .footer-list {
 }
 
  @media screen and (max-width: 1400px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 1200px){
 
 @supports (-webkit-appearance:none){
 
