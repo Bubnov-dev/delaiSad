@@ -189,7 +189,10 @@ p
     align-items: center
     gap: 15px
     a
-    text-decoration: none
+        text-decoration: none
+        @media screen and ( max-width: $md )
+            font-size: 17px !important
+            
 
 *
     box-sizing: border-box
@@ -775,11 +778,12 @@ picture
 .header-top
     background: $dark
     padding: 11px 0 14px
-    color: $light
+    color: $yellow
     font-size: 15px
     a 
         font-size: 15px
-        color: $light
+        color: $yellow
+
     &__eng-speakers a
         color: $yellow !important
         white-space:  nowrap
@@ -1046,7 +1050,7 @@ header.white
 
 
 
-.banner
+.banner 
     color: white
     padding-top: 127px
     padding-bottom: 106px
@@ -1054,7 +1058,7 @@ header.white
     grid-template-columns: 2fr 250px
     gap: 20px
 
-    @media screen and ( max-width: $lg )
+    @media screen and ( max-width: $xxl )
         display: block
         
     &__left
@@ -1118,7 +1122,7 @@ header.white
         margin-top: 3.4rem
         margin-bottom: 54px
 
-        @media screen and ( max-width: $md )
+        @media screen and ( max-width: $xl )
             flex-wrap: wrap
 
         &__item
@@ -1151,6 +1155,7 @@ header.white
 .banner-wrapper--foundation
     background-image: url(../img/header.png)
 
+
 .banner-wrapper--snd
     background-repeat: none;
     background-size: cover;
@@ -1164,6 +1169,7 @@ header.white
 .place-items-center
     place-items: center
 .def-combo
+    max-width: 100%
     display: flex
     gap: 1rem 4rem
     // align-items: center
@@ -1204,7 +1210,13 @@ header.white
     border: none
     box-shadow: none !important
     border-bottom: 5px solid $red-dark !important
-  
+    @media screen and ( max-width: $md )
+        max-width: 100%
+        white-space: inherit
+        padding: 20px
+
+        
+
     &.geo
         padding: 23px
 

@@ -19,7 +19,7 @@ $(document).ready(function () {
             {
                 breakpoint: 1100,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 2.5,
                 }
             },
             {
@@ -31,7 +31,14 @@ $(document).ready(function () {
             {
                 breakpoint: 700,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 1.3,
+                }
+            },
+
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1
                 }
             },
         ]

@@ -368,6 +368,9 @@ p.plain-text {
       -ms-flex-align: center;
           align-items: center;
   gap: 15px;
+}
+
+.phone a {
   text-decoration: none;
 }
 
@@ -788,13 +791,13 @@ picture > * {
 .header-top {
   background: #333333;
   padding: 11px 0 14px;
-  color: #f7f7f7;
+  color: #F4E9BF;
   font-size: 15px;
 }
 
 .header-top a {
   font-size: 15px;
-  color: #f7f7f7;
+  color: #F4E9BF;
 }
 
 .header-top__eng-speakers a {
@@ -1258,6 +1261,7 @@ header.white .my-dropdown-menu a {
 }
 
 .def-combo {
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2201,7 +2205,7 @@ section.no-p {
 .benefits__grid {
   display: grid;
   grid-template-columns: 1fr 463px;
-  gap: 95px;
+  gap: 40px 95px;
 }
 
 .benefits__list {
@@ -2345,6 +2349,10 @@ section.no-p {
           align-items: end;
 }
 
+.ivanova__small-text {
+  font-size: 18px;
+}
+
 .ivanova__text {
   padding-bottom: 50px;
   font-size: 24px;
@@ -2457,6 +2465,11 @@ section.no-p {
   text-align: left;
 }
 
+.offer__content .phone {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
 .offer__content .phone a {
   font-size: 25px;
   font-weight: 400;
@@ -2471,7 +2484,6 @@ section.no-p {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  white-space: nowrap;
 }
 
 .contacts {
@@ -2493,7 +2505,6 @@ section.no-p {
 #map {
   margin-top: 27px;
   height: 630px;
-  max-height: 80vh;
 }
 
 .ymaps-2-1-79-ground-pane {
@@ -2554,6 +2565,10 @@ section.no-p {
   font-size: 24px;
   font-weight: 300;
   line-height: 32px;
+}
+
+.map-info__content a {
+  text-decoration: none;
 }
 
 footer {
@@ -2940,6 +2955,10 @@ footer .footer-list {
     max-width: 150px;
   }
 
+  .banner {
+    display: block;
+  }
+
   .about__grid {
     grid-template-columns: 1fr 333px;
   }
@@ -2950,6 +2969,11 @@ footer .footer-list {
 }
 
 @media screen and (max-width: 1200px) {
+  .banner-list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
   .benefits__grid {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2961,10 +2985,6 @@ footer .footer-list {
   }
 
   .benefits__info {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     gap: 30px 10%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -2990,6 +3010,10 @@ footer .footer-list {
   .offer {
     display: block;
   }
+
+  .offer__content {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 1199px) {
@@ -2999,10 +3023,6 @@ footer .footer-list {
 }
 
 @media screen and (max-width: 992px) {
-  .banner {
-    display: block;
-  }
-
   .banner .h1 {
     max-width: 100%;
   }
@@ -3022,6 +3042,10 @@ footer .footer-list {
 
   .footer-footer__links-wa a {
     font-size: 14px;
+  }
+
+  section {
+    padding: 20px 0 50px;
   }
 
   .project-type {
@@ -3057,6 +3081,11 @@ footer .footer-list {
     display: none;
   }
 
+  .ivanova {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+
   .ivanova__grid {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3082,9 +3111,18 @@ footer .footer-list {
         flex-shrink: 0;
   }
 
+  #map {
+    max-height: 70vh;
+  }
+
+  .map-info {
+    padding: 20px;
+  }
+
   .map-info-wrapper {
     position: static;
     margin-bottom: 30px;
+    width: 100%;
   }
 }
 
@@ -3099,14 +3137,13 @@ footer .footer-list {
 }
 
 @media screen and (max-width: 768px) {
+  .phone a {
+    font-size: 17px !important;
+  }
+
   .g-45 {
     --bs-gutter-y: 30px;
     --bs-gutter-x: 20px;
-  }
-
-  .banner-list {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
   }
 
   .banner-list__item {
@@ -3125,6 +3162,12 @@ footer .footer-list {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
+  }
+
+  .btn-primary {
+    max-width: 100%;
+    white-space: inherit;
+    padding: 20px;
   }
 
   .footer-footer .footer-img {
@@ -3189,6 +3232,23 @@ footer .footer-list {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 40px;
+  }
+
+  .benefits__info-text {
+    font-size: 24px;
+  }
+
+  .offer__content {
+    font-size: 25px;
+    padding: 30px;
+  }
+
+  .offer__content .phone a {
+    font-style: 21px;
+  }
+
+  .map-info__content {
+    font-size: 22px;
   }
 }
 

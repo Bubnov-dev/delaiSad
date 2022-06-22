@@ -22,6 +22,9 @@
 
 section
     padding: 80px 0 90px
+    @media screen and ( max-width: $lg )
+        padding: 20px 0 50px
+
 
     &.no-p
         padding: 0
@@ -384,7 +387,7 @@ section
     &__grid
         display: grid
         grid-template-columns: 1fr 463px
-        gap: 95px
+        gap: 40px 95px
         @media screen and ( max-width: $xl )
             @include vertical
 
@@ -413,7 +416,6 @@ section
         @include vertical
         gap: 53px
         @media screen and ( max-width: $xl )
-            flex-direction: row
             gap: 30px 10%
             flex-wrap: wrap
 
@@ -450,6 +452,8 @@ section
             padding: 0 15px 0
             @media screen and ( max-width: $xl )
                 padding-top: 15px 
+            @media screen and ( max-width: $md )
+                font-size: 24px
 
 
     &__contact
@@ -514,6 +518,10 @@ section
 
 .ivanova
     padding-bottom: 127px
+    @media screen and ( max-width: $lg )
+        padding-bottom: 40px
+        padding-top: 40px
+
     &__grid
         display: grid
         grid-template-columns: 5fr 6fr
@@ -523,6 +531,9 @@ section
             @include vertical
             
             
+    &__small-text
+        font-size: 18px
+
     &__text
         padding-bottom: 50px
         font-size: 24px;
@@ -589,6 +600,7 @@ section
     &__right
         background: $dark-back
         padding: 39px
+
     
     &__content
         padding: 50px
@@ -603,8 +615,16 @@ section
         line-height: 40px;
         letter-spacing: 0em;
         text-align: left;
+        @media screen and ( max-width: $xl )
+            max-width: 100%
+        @media screen and ( max-width: $md )
+            font-size: 25px;
+            padding: 30px
+
+            
 
         .phone 
+            flex-shrink: 0
             a
                 font-size: 25px;
                 font-weight: 400;
@@ -615,7 +635,9 @@ section
                 gap: 15px
                 align-items: center
                 text-decoration: none
-                white-space: nowrap
+                @media screen and ( max-width: $md )
+                    font-style: 21px
+                    
 
 
 .contacts
@@ -640,7 +662,10 @@ section
 #map
     margin-top: 27px
     height: 630px
-    max-height: 80vh
+    
+    @media screen and ( max-width: $lg )
+        max-height: 70vh
+
 
        
 .ymaps-2-1-79-ground-pane
@@ -654,6 +679,8 @@ section
 
     @include vertical
     gap: 20px
+    @media screen and ( max-width: $lg )
+        padding: 20px
     .container
         position: relative
 
@@ -669,6 +696,7 @@ section
         @media screen and ( max-width: $lg )
             position: static
             margin-bottom: 30px
+            width: 100%
 
 
     
@@ -692,6 +720,11 @@ section
         font-size: 24px;
         font-weight: 300;
         line-height: 32px;
+        @media screen and ( max-width: $md )
+            font-size: 22px
+            
+        a
+            text-decoration: none
 
 footer
     
