@@ -486,6 +486,11 @@ h3,
   max-width: 1160px;
 }
 
+.subtitle.hstack {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .back-lines {
   height: 100%;
   display: -webkit-box;
@@ -1178,6 +1183,26 @@ header.white .my-dropdown-menu a {
 .banner__right .video-play {
   margin-bottom: 60px;
   max-width: 40vw;
+}
+
+.banner__right .video-play__play {
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+
+.banner__right .video-play .like-btn {
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+
+.banner__right .video-play:hover .like-btn {
+  fill: #DA5C3E;
+}
+
+.banner__right .video-play:hover .video-play__play {
+  fill: white;
 }
 
 .banner .pre-h1-text {

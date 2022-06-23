@@ -71,7 +71,7 @@ section
         position: relative
         width: 327px
         max-width: 100%
-        cursor: pointer
+        // cursor: pointer
         &-wrapper
             padding-right: 20px
         img
@@ -79,6 +79,8 @@ section
             height: 564px
             max-height: 70vh
             object-fit: cover
+            @media screen and ( max-width: $xl )
+                height: 400px
 
         &-title
             position: absolute
@@ -251,6 +253,7 @@ section
     align-items: center
 
     @media screen and ( max-width: $lg )
+        margin-bottom: 80px
         display: flex
         flex-direction: column
         
@@ -427,7 +430,7 @@ section
 
 
         &-img
-            margin-top: -70px
+            margin-top: -100px
             margin-left: -40px
             width: calc(100% + 80px)
             @media screen and ( max-width: $xl )
@@ -553,6 +556,7 @@ section
             z-index: -1
 
 .work-scheme
+    padding: 70px 0
     background: $light
     text-align: center
     background-image: url('../img/dd.svg')
@@ -648,9 +652,11 @@ section
         display: flex
         gap: 19px
         @media screen and ( max-width: $lg )
-            overflow: scroll
+            display: grid
+            grid-template-columns: 1fr 1fr
             a
-                width: 328px
+                width: auto
+
                 max-width: 80vw
                 flex-shrink: 0
             

@@ -319,6 +319,9 @@ h3, .h3
 
     max-width: 1160px
 
+    &.hstack
+        flex-wrap: wrap
+
 .back-lines
     height: 100%
 
@@ -1071,6 +1074,19 @@ header.white
         .video-play
             margin-bottom: 60px
             max-width: 40vw
+            &__play
+                transition: .3s
+
+            .like-btn
+                transition: .3s
+            &:hover
+                .like-btn
+                    fill: $red
+
+                .video-play__play
+                    fill: white
+
+                
 
 
     .pre-h1-text
